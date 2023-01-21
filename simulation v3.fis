@@ -1,0 +1,73 @@
+[System]
+Name='simulation'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='temp'
+Range=[0 50]
+NumMFs=3
+MF1='low':'trapmf',[-18.75 0 21 27]
+MF2='medium':'trapmf',[22 27.2 36 38]
+MF3='high':'trapmf',[33 38.5 50 50]
+
+[Input2]
+Name='ph'
+Range=[0 14]
+NumMFs=3
+MF1='low':'trapmf',[0 0 5 7]
+MF2='medium':'trapmf',[6 6.2 8.5 9]
+MF3='high':'trapmf',[8 9.5 14 14]
+
+[Input3]
+Name='DO'
+Range=[0 9]
+NumMFs=3
+MF1='low':'trapmf',[0 0 3 4]
+MF2='medium':'trapmf',[3 4.1 5.5 6]
+MF3='high':'trapmf',[5 6.2 9 9]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=3
+MF1='poor':'trapmf',[0 0 0.3 0.4]
+MF2='normal':'trapmf',[0.3 0.4583 0.6 0.7]
+MF3='good':'trapmf',[0.6 0.71 1 1]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 1 2, 1 (1) : 1
+1 1 3, 2 (1) : 1
+1 2 1, 1 (1) : 1
+1 2 2, 2 (1) : 1
+1 2 3, 1 (1) : 1
+1 3 1, 2 (1) : 1
+1 3 2, 1 (1) : 1
+1 3 3, 1 (1) : 1
+2 1 1, 1 (1) : 1
+2 1 2, 2 (1) : 1
+2 1 3, 2 (1) : 1
+2 2 1, 2 (1) : 1
+2 2 2, 3 (1) : 1
+2 2 3, 2 (1) : 1
+2 3 1, 2 (1) : 1
+2 3 2, 2 (1) : 1
+2 3 3, 1 (1) : 1
+3 1 1, 1 (1) : 1
+3 1 2, 1 (1) : 1
+3 1 3, 2 (1) : 1
+3 2 1, 1 (1) : 1
+3 2 2, 2 (1) : 1
+3 2 3, 2 (1) : 1
+3 3 1, 2 (1) : 1
+3 3 3, 1 (1) : 1
+3 3 2, 2 (1) : 1
